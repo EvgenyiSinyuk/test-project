@@ -3,8 +3,6 @@ Run command in terminal:
 
 > mvn clean test -Dapp.url="https://www.company-name.com" -Dbrowser="chrome"
 
-Only for chrome right now
-
 Command for report: 
 
 >mvn allure:serve

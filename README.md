@@ -1,6 +1,5 @@
 How to run:
-Run command in terminal: mvn clean test -DsiteUrl="https://www.company-name.com" -DsiteLanguage="en" -DsiteCountry="LT" 
--Dbrowser="chrome"
+Run command in terminal: mvn clean test -Dapp.url="https://www.company-name.com" -Dbrowser="chrome"
 (only for chrome right now)
 Command for report: mvn allure:serve
 

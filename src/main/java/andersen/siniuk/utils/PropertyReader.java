@@ -1,4 +1,4 @@
-package org.example.utils;
+package andersen.siniuk.utils;
 
 import org.aeonbits.owner.ConfigFactory;
 

@@ -1,6 +1,6 @@
-package org.example.utils;
+package andersen.siniuk.utils;
 
-import org.example.drivers.DriverFactory;
+import andersen.siniuk.drivers.DriverFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 

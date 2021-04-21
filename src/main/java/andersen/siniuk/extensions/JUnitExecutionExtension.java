@@ -1,7 +1,7 @@
-package org.example.extensions;
+package andersen.siniuk.extensions;
 
-import org.example.drivers.DriverFactory;
-import org.example.utils.ScreenshotMaker;
+import andersen.siniuk.drivers.DriverFactory;
+import andersen.siniuk.utils.ScreenshotMaker;
 import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
@@ -32,7 +32,7 @@ public class JUnitExecutionExtension implements BeforeAllCallback, ExtensionCont
     }
 
     @Override
-    public void close() throws Throwable {
+    public void close() {
         DriverFactory.getDriver().close();
     }
 }

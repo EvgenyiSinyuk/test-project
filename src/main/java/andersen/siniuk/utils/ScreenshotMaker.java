@@ -1,4 +1,4 @@
-package org.example.utils;
+package andersen.siniuk.utils;
 
 import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;

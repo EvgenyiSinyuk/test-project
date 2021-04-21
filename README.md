@@ -1,11 +1,15 @@
-# How to run:
+## How to run:
 Run command in terminal: 
+
 > mvn clean test -Dapp.url="https://www.company-name.com" -Dbrowser="chrome"
 
-(only for chrome right now)
-Command for report: mvn allure:serve
+Only for chrome right now
 
-# Dependencies:
+Command for report: 
+
+>mvn allure:serve
+
+## Dependencies:
 > Java
 > Maven
 > Selenium WebDriver

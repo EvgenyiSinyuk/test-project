@@ -1,4 +1,4 @@
-package andersen.siniuk.countriesInfo;
+package com.andersen.siniuk.countriesInfo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

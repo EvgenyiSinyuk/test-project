@@ -29,7 +29,7 @@
     <allure-maven.version>2.10.0</allure-maven.version>
     <slf4j-simple.version>1.7.30</slf4j-simple.version>
     <lombok.version>1.18.16</lombok.version>
-    <aeonbits.version>1.0.10</aeonbits.version>
+    <aeonbits.version>1.0.12</aeonbits.version>
   </properties>
 
   <dependencies>

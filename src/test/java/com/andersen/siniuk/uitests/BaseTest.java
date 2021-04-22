@@ -1,7 +1,7 @@
-package andersen.siniuk.uitests;
+package com.andersen.siniuk.uitests;
 
-import andersen.siniuk.drivers.DriverFactory;
-import andersen.siniuk.extensions.JUnitExecutionExtension;
+import com.andersen.siniuk.drivers.DriverFactory;
+import com.andersen.siniuk.extensions.JUnitExecutionExtension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;

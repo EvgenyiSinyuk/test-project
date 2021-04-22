@@ -1,6 +1,7 @@
-package andersen.siniuk.drivers;
+package com.andersen.siniuk.drivers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
+@Slf4j
 public class DriverFactory {
 
     private static WebDriver driver;
@@ -39,7 +41,7 @@ public class DriverFactory {
             chromeDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             return chromeDriver;
         } else {
-            System.err.println("Browser name wrong");
+            log.error("Browser name wrong");
             return null;
         }
     }

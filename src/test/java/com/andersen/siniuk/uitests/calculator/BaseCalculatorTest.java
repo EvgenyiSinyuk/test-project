@@ -1,7 +1,7 @@
-package andersen.siniuk.uitests.calculator;
+package com.andersen.siniuk.uitests.calculator;
 
-import andersen.siniuk.ui.CalculatorPage;
-import andersen.siniuk.uitests.BaseTest;
+import com.andersen.siniuk.ui.CalculatorPage;
+import com.andersen.siniuk.uitests.BaseTest;
 import org.junit.jupiter.api.BeforeEach;
 
 public abstract class BaseCalculatorTest extends BaseTest {

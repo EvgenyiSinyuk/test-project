@@ -1,5 +1,5 @@
 How to run:
-Run command in terminal: mvn clean test -Dapp.url="https://www.company-name.com" -Dbrowser="chrome"
+Run command in terminal: mvn clean test -Dapp.url="https://www.paysera.lt/v2/en-LT/fees/currency-conversion-calculator#/" -Dbrowser="chrome"
 (only for chrome right now)
 Command for report: mvn allure:serve
 

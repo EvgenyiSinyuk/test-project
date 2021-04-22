@@ -1,4 +1,4 @@
-package andersen.siniuk.countriesInfo;
+package com.andersen.siniuk.countriesInfo;
 
 public enum Currencies {
 

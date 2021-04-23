@@ -6,6 +6,7 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -32,17 +33,21 @@ public class DriverFactory {
     }
 
     private static WebDriver getPreparedDriver() {
-        if (System.getProperty("browser").equals("chrome")) {
+        WebDriver driver;
+
+        if (System.getProperty("browser").equals(Browsers.CHROME)) {
             WebDriverManager.chromedriver().setup();
-
-            WebDriver chromeDriver = new ChromeDriver(getChromeCapabilities());
-
-            chromeDriver.manage().window().maximize();
-            chromeDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-            return chromeDriver;
+            driver = new ChromeDriver(getChromeCapabilities());
+        } else if (System.getProperty("browser").equals(Browsers.FIREFOX)) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
         } else {
             log.error("Browser name wrong");
             return null;
         }
+
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        return driver;
     }
 }

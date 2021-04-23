@@ -9,7 +9,7 @@ Command for report:
 
 >mvn allure:serve
 
-##Properties in application.properties
+## Properties in application.properties
 - siteUrl - url of application under test
 - browser - browser name which will be used for test run
 

@@ -35,10 +35,10 @@ public class DriverFactory {
     private static WebDriver getPreparedDriver() {
         WebDriver driver;
 
-        if (System.getProperty("browser").equals(Browsers.CHROME)) {
+        if (System.getProperty("browser").equals(Browsers.CHROME.getName())) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(getChromeCapabilities());
-        } else if (System.getProperty("browser").equals(Browsers.FIREFOX)) {
+        } else if (System.getProperty("browser").equals(Browsers.FIREFOX.getName())) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         } else {

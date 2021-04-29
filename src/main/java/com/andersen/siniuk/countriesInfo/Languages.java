@@ -8,7 +8,7 @@ import lombok.Getter;
 public enum Languages {
 
     RUSSIA("Русский"),
-    LUTHUANIA("Lietuvių"),
+    LITHUANIA("Lietuvių"),
     ESTONIA("Eesti"),
     LATVIA("Latviešu"),
     BULGARIA("Български"),

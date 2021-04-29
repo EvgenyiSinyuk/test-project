@@ -1,6 +1,8 @@
 package com.andersen.siniuk.ui;
 
 import com.andersen.siniuk.countriesInfo.Currencies;
+import com.andersen.siniuk.ui.currencyTable.CurrencyTable;
+import com.andersen.siniuk.ui.currencyTable.CurrencyTableColumns;
 import com.andersen.siniuk.utils.Actions;
 import io.qameta.allure.Step;
 import org.apache.commons.lang3.StringUtils;
@@ -117,10 +119,10 @@ public class CalculatorPage extends BasePage {
 
 
     @Step("Get diff between Company's and Provider's amounts")
-    public BigDecimal getProviderCompanyDiff() {
-        final BigDecimal companyAmount = getUSDCompanyAmount();
-        final BigDecimal swedBankAmount = getUSDSwedBankAmount();
-        return swedBankAmount.subtract(companyAmount);
+    public BigDecimal getProviderCompanyDiff(CurrencyTableColumns bank, Currencies currencyToCheck) {
+        final BigDecimal companyAmount = getCurrencyRateForColumn(CurrencyTableColumns.COMPANY_AMOUNT, currencyToCheck);;
+        final BigDecimal bankAmount = getCurrencyRateForColumn(bank, currencyToCheck);
+        return bankAmount.subtract(companyAmount);
     }
 
     @Step("Check that sell input empty")
@@ -148,7 +150,7 @@ public class CalculatorPage extends BasePage {
     }
 
     @Step("Check that counted and displayed are loss equals")
-    public CalculatorPage checkRatesUpdated(String rateBefore, String rateAfter) {
+    public CalculatorPage checkRatesUpdated(BigDecimal rateBefore, BigDecimal rateAfter) {
         assertNotEquals(rateBefore, rateAfter, "Rates for different countries equals!");
         return this;
     }
@@ -157,6 +159,16 @@ public class CalculatorPage extends BasePage {
     public CalculatorPage checkCurrencyChanged(String newCurrency, Currencies countryCurrency) {
         assertEquals(newCurrency, countryCurrency.toString(), "Wrong currency for this country!");
         return this;
+    }
+
+    @Step("Get currency rate for bank")
+    public BigDecimal getCurrencyRateForColumn(CurrencyTableColumns bank, Currencies currency) {
+        return new BigDecimal(new CurrencyTable(driver).getBankRateForCountry(bank, currency).replaceAll(",", ""));
+    }
+
+    @Step("Get currency loss for bank")
+    public BigDecimal getCurrencyLossForColumn(CurrencyTableColumns bank, Currencies currency) {
+        return new BigDecimal(new CurrencyTable(driver).getBankLossForCountry(bank, currency).replaceAll(",", ""));
     }
 
 }

@@ -8,7 +8,7 @@ import lombok.Getter;
 public enum Countries {
 
     RUSSIA("Russia", Currencies.RUB),
-    LUTHUANIA("Lithuania", Currencies.EUR),
+    LITHUANIA("Lithuania", Currencies.EUR),
     ESTONIA("Estonia", Currencies.EUR),
     LATVIA("Latvia", Currencies.EUR),
     BULGARIA("Bulgaria", Currencies.BGN),
